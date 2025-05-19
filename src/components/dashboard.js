@@ -36,7 +36,7 @@ const Dashboard = () => {
 
     const fetchGroups = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/chat/groups/:groupId`, {
+        const response = await fetch(`http://localhost:3000/api/chat/groups/`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -61,8 +61,8 @@ const Dashboard = () => {
     }
   }, [currentUser?.id, token]);
 
-  const tabs = ['All', 'Unread', 'Favorites', 'Groups'];
-
+  const tabs = ['All', 'Groups'];
+//  'Unread', 'Favorites',
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <Header />
